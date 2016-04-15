@@ -1,0 +1,1 @@
+../svg2rlg/svg2rlg.py
