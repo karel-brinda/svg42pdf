@@ -7,7 +7,11 @@ import inspect
 import os
 
 def report(svg_fn,pdf_fn):
-    print("'{}' was created from '{}' using function '{}'.".format(pdf_fn,svg_fn,inspect.stack()[1][3]))
+    try:
+        fun_name=inspect.stack()[1][3]
+    except:
+        fun_name='N/A'
+    print("'{}' was created from '{}' using function '{}'.".format(pdf_fn,svg_fn,fun_name))
 
 
 def svg42pdf_cairo(svg_fn,pdf_fn):
