@@ -1,1 +1,1 @@
-../svg2rlg/svg2rlg.py
+../ext/svg2rlg/svg2rlg.py

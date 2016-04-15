@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 
-import svg2rlg
+from . import svg2rlg
 import smbl
 import argparse
 import inspect
