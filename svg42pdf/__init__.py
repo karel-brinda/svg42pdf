@@ -1,6 +1,5 @@
 #! /usr/bin/env python3
 
-from . import svg2rlg
 import smbl
 import argparse
 import inspect
@@ -23,7 +22,7 @@ def svg42pdf_cairo(svg_fn,pdf_fn):
     report(svg_fn,pdf_fn)
 
 def svg42pdf_reportlab(svg_fn,pdf_fn):
-    from svg2rlg import svg2rlg
+    from .svg2rlg import svg2rlg
     from reportlab.graphics import renderPDF
     drawing = svg2rlg(svg_fn)
     renderPDF.drawToFile(drawing, pdf_fn)
