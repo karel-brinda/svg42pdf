@@ -1,9 +1,28 @@
 #! /usr/bin/env python3
 
-import smbl
 import argparse
 import inspect
 import os
+import snakemake
+import re
+
+def shell(
+            cmd,
+            remove_spaces=True,
+            async=False,
+            iterable=False,
+            read=False, 
+        ):
+    if remove_spaces:
+        #print("removing spaces from command")
+        cmd=re.sub(r'[ \t\f\v]+',' ',cmd).strip()
+
+    return snakemake.shell(
+            cmd=cmd,
+            async=async,
+            iterable=iterable,
+            read=read,
+        )
 
 def report(svg_fn,pdf_fn):
     try:
@@ -29,14 +48,14 @@ def svg42pdf_reportlab(svg_fn,pdf_fn):
     report(svg_fn,pdf_fn)
 
 def svg42pdf_svg2pdf(svg_fn,pdf_fn):
-    smbl.utils.shell('svg2pdf "{svg}" "{pdf}"'.format(
+    shell('svg2pdf "{svg}" "{pdf}"'.format(
             svg_fn,
             pdf_fn,
         ))
     report(svg_fn,pdf_fn)
 
 def svg42pdf_imagemagick(svg_fn,pdf_fn,dpi=200):
-    smbl.utils.shell('convert -density {dpi} "{svg}" "{pdf}"'.format(
+    shell('convert -density {dpi} "{svg}" "{pdf}"'.format(
             dpi=200,
             svg=svg_fn,
             pdf=pdf_fn,
@@ -44,14 +63,14 @@ def svg42pdf_imagemagick(svg_fn,pdf_fn,dpi=200):
     report(svg_fn,pdf_fn)
 
 def svg42pdf_inkscape(svg_fn,pdf_fn):
-    smbl.utils.shell('inkscape -f "{svg}" -A "{pdf}"'.format(
+    shell('inkscape -f "{svg}" -A "{pdf}"'.format(
             svg=os.path.abspath(svg_fn),
             pdf=os.path.abspath(pdf_fn),
         ))
     report(svg_fn,pdf_fn)
 
 def svg42pdf_wkhtmltopdf(svg_fn,pdf_fn):
-    smbl.utils.shell('wkhtmltopdf -B 0 -L 0 -R 0 -T 0 "{svg}" "{pdf}"'.format(
+    shell('wkhtmltopdf -B 0 -L 0 -R 0 -T 0 "{svg}" "{pdf}"'.format(
             svg=os.path.abspath(svg_fn),
             pdf=os.path.abspath(pdf_fn),
         ))
