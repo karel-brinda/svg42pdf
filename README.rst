@@ -1,7 +1,8 @@
 SVG42PDF
 ========
 
-.. image:: https://img.shields.io/pypi/dm/svg42pdf.svg   :target: 
+.. image:: https://badge.fury.io/py/svg42pdf.svg
+    :target: https://badge.fury.io/py/svg42pdf
 
 Converting SVG to PDF might be a complicated task. Various tools exist this purpose,
 but many of them create different outputs, they don't work both on Linux and OS X, or
