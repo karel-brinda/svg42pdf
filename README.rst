@@ -4,11 +4,10 @@ SVG42PDF
 .. image:: https://badge.fury.io/py/svg42pdf.svg
     :target: https://badge.fury.io/py/svg42pdf
 
-Converting SVG to PDF might be a complicated task. Various tools exist this purpose,
-but many of them create different outputs, they don't work both on Linux and OS X, or
-they depend on some heavy libraries.
+Unlike other graphic formats, SVG is frequently hard to be converted to PDF. Various tools have been designed for this purpose, but most of them are either OS-specific, have OS-specific interface, create incorrent outputs, or
+they heavily depend libraries, which are difficult to install or which are provided only under very restricted licenses.
 
-This program aims at the conversion using *any* available tool.
+SVG42PDF is a tool for SVG → PDF conversion using existing tools and libraries. The method of conversion can be either specified by user, or it can be selected automatically.
 
 
 Installation
@@ -28,7 +27,7 @@ Examples
 
 Use first working method:
 
-	svg42pdf -m any input.svg output.pdf
+	svg42pdf input.svg output.pdf
 
 Use `Cairo <https://cairographics.org/>`_:
 
@@ -42,11 +41,11 @@ Use `Inkscape <https://inkscape.org>`_:
 
 	svg42pdf -m inkscape input.svg output.pdf
 
-Use `ImageMagick <https://www.imagemagick.org>`_:
+Use `ImageMagick <https://www.imagemagick.org>`_ (does not keep vector representation):
 
 	svg42pdf -m imagemagick input.svg output.pdf
 
-Use `Wkhtmltopdf <https://wkhtmltopdf.org>`_ (using the Qt WebKit):
+Use `Wkhtmltopdf <https://wkhtmltopdf.org>`_ (using the Qt WebKit, creates big white margins):
 
 	svg42pdf -m wkhtmltopdf input.svg output.pdf
 
