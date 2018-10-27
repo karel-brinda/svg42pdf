@@ -3,8 +3,6 @@
 import argparse
 import inspect
 import os
-import psutil
-import re
 import subprocess
 
 
