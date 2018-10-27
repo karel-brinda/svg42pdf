@@ -5,7 +5,7 @@ import setuptools
 import os
 import sys
 
-if sys.version_info < (3, 2):
+if sys.version_info < (3, 3):
     sys.exit('Minimum supported Python version is 3.2')
 
 here = os.path.abspath(os.path.dirname(__file__))
@@ -24,7 +24,7 @@ setuptools.setup(
     long_description=long_description,
     url='https://github.com/karel-brinda/svg42pdf',
     author='Karel Brinda',
-    author_email='karel.brinda@univ-mlv.fr',
+    author_email='kbrinda@hsph.harvard.edu',
     license='MIT',
     classifiers=[
         'Development Status :: 5 - Production/Stable',
