@@ -7,7 +7,9 @@ import subprocess
 
 
 def shell(*cmd):
+    cmd = map(str, cmd)
     p = subprocess.Popen(cmd)
+    p.wait()
 
 
 def report(svg_fn, pdf_fn):
