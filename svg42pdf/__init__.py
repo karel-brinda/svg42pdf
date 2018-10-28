@@ -4,10 +4,12 @@ import argparse
 import inspect
 import os
 import subprocess
+import sys
 
 
 def shell(*cmd):
-    cmd = map(str, cmd)
+    cmd = list(map(str, cmd))
+    print("Running: '{}'".format(" ".join(cmd)), file=sys.stderr)
     p = subprocess.Popen(cmd)
     p.wait()
 
@@ -60,8 +62,10 @@ def svg42pdf_inkscape(svg_fn, pdf_fn):
 
 
 def svg42pdf_wkhtmltopdf(svg_fn, pdf_fn):
-    shell('wkhtmltopdf', '-B', '0', '-L', '0', '-R', '0', '-T', '0', svg_fn,
-          pdf_fn)
+    shell(
+        'wkhtmltopdf',  #'-B', '0', '-L', '0', '-R', '0', '-T', '0',
+        svg_fn,
+        pdf_fn)
     report(svg_fn, pdf_fn)
 
 
