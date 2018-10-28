@@ -8,7 +8,7 @@ Unlike other graphic formats, SVG is usually hard to convert to PDF.
 Existing tools often suffer from the following limitations:
 
 * Do not work on all operating systems
-* Version for different operating systems have different command-line interfaces
+* Versions for different operating systems have different command-line interfaces
 * SVG is interpreted incorrectly
 * Dependencies are difficult to install
 * Have licencing issues
