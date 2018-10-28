@@ -106,9 +106,11 @@ def svg42pdf(svg_fn, pdf_fn, method):
 
 
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("svg", type=str, help="SVG file")
-    parser.add_argument("pdf", type=str, help="PDF file")
+    parser = argparse.ArgumentParser(description="Convert SVG to PDF")
+    parser.add_argument(
+        "svg", metavar='input.svg', type=str, help="Input SVG file")
+    parser.add_argument(
+        "pdf", metavar='output.pdf', type=str, help="Output PDF file")
     parser.add_argument(
         "-m",
         choices=[
