@@ -4,10 +4,18 @@ SVG42PDF
 .. image:: https://badge.fury.io/py/svg42pdf.svg
     :target: https://badge.fury.io/py/svg42pdf
 
-Unlike other graphic formats, SVG is frequently hard to be converted to PDF. Various tools have been designed for this purpose, but most of them are either OS-specific, have OS-specific interface, create incorrent outputs, or
-they heavily depend libraries, which are difficult to install or which are provided only under very restricted licenses.
+Unlike other graphic formats, SVG is usually hard to convert to PDF.
+Existing tools often suffer from the following limitations:
 
-SVG42PDF is a tool for SVG → PDF conversion using existing tools and libraries. The method of conversion can be either specified by user, or it can be selected automatically.
+* Do not work on all operating systems
+* Version for different operating systems have different command-line interfaces
+* SVG is interpreted incorrectly
+* Dependencies are difficult to install
+* Have licencing issues
+
+SVG42PDF is a tool for converting SVG to PDF using existing tools and
+libraries. Method of conversion can be specified by user, or it can be
+selected automatically.
 
 
 Installation
@@ -55,4 +63,5 @@ FAQ
 
 * Why is there 42 in the name?
 
-	There are already too many svg2pdf tools.
+	There are already too many tools called svg2pdf.
+
